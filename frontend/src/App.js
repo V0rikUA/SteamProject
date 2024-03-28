@@ -6,93 +6,42 @@ function App() {
   return (
     <div className="App">
       <LoginWithSteamButton />
-      <h2>
-        Самая ожидаемая игра 2009 года, сиквел к самому популярному экшену от
-        первого лица за всю историю игр, Modern Warfare 2 продолжает
-        захватывающую историю предыдущих частей. На этот раз игроки столкнутся с
-        новой угрозой: полным уничтожением этого мира. <br />
-        Впервые в истории видеоигр музыкальное сопровождение для Call of Duty®:
-        Modern Warfare 2 написано многократным обладателем наград Американской
-        Киноакадемии, Золотой глобус, Грэмми и Тони, легендарным композитором
-        Хансом Циммером. Действия игры разворачиваются сразу же после событий
-        Call of Duty® 4: Modern Warfare® — игры, завоевавшей множество
-        положительных оценок от критиков со всего мира, в том числе:
+      <h1>Hogwarts Legacy: Digital Deluxe Edition</h1>
+      <p>
+        <img src="https://cdn.akamai.steamstatic.com/steam/apps/990080/extras/HL_SE_AH_GH_610x222_FIN.png?t=1708720689" />
         <br />
-        <ul class="bb_ul">
-          <li>
-            «Самая популярная видеоигра по Интернету» по версии Книги рекордов
-            Гинесса, 2009 год
-            <br />
-          </li>
-          <li>
-            Более 50 наград «Игра года», в том числе награды «Игра года для
-            консолей» и «Лучшая игра года» в 2007 от Академии наук и
-            интерактивных развлечений.
-          </li>
-        </ul>
-        <h2 class="bb_tag">УНИКАЛЬНЫЕ КООПЕРАТИВНЫЕ МИССИИ</h2>Абсолютно новый
-        игровой режим с поддержкой одновременной игры по Интернету 2 человек,
-        сильно отличающийся от сюжета одиночной игры.
+        The Hogwarts Legacy Digital Deluxe Edition Includes:
         <br />
-        <ul class="bb_ul">
-          <li>
-            Спецоперации подразделяются на 2 вида: на время и на выполнение
-            цели.
-            <br />
-          </li>
-          <li>
-            Открывайте новые миссии, еще более сложные, успешно выполняя уже
-            доступные.
-            <br />
-          </li>
-          <li>
-            Места действий: самые яркие моменты из одиночной игры, любимые
-            моменты из Call of Duty 4: Modern Warfare и абсолютно новые,
-            эксклюзивные миссии.
-          </li>
-        </ul>
-        <h2 class="bb_tag">ПЕРЕИЗОБРЕТЕННЫЙ МУЛЬТИПЛЕЕР</h2>
-        Устанавливая новую планку стандарта для многопользовательских игр, в
-        Modern Warfare 2 вниманию игрока предложены новые возможности, настройки
-        и режимы игры, а также:
+        -Thestral Mount
         <br />
-        Создайте и попробуйте в бою улучшенное
+        -Dark Arts Battle Arena
         <br />
-        <ul class="bb_ul">
-          <li>
-            <strong>Дополнительное оружие:</strong> автоматические пистолеты,
-            дробовики, ракетницы
-            <br />
-          </li>
-          <li>
-            <strong>Щит</strong>
-            <br />
-          </li>
-          <li>
-            <strong>Снаряжение:</strong> метательные ножи, места тактической
-            высадки, противоударная экипировка
-            <br />
-          </li>
-          <li>
-            <strong>Уникальные способности</strong>
-            <br />
-          </li>
-          <li>
-            <strong>Пары оружий</strong>
-          </li>
-        </ul>
-        <ul class="bb_ul">
-          <li>
-            <strong>Награды за серию:</strong>
-            AC130, турель, глушение радара, груз снабжения и ужасающий ядерный
-            взрыв!
-            <br />
-          </li>
-          <li>
-            <strong>Подробная послематчевая статистика</strong>
-          </li>
-        </ul>
-      </h2>
+        -Dark Arts Cosmetic Set
+        <br />
+        -Dark Arts Garrison Hat
+      </p>
+      <br />
+      <h1>About the Game</h1>Hogwarts Legacy is an open-world action RPG set in
+      the world first introduced in the Harry Potter books. Embark on a journey
+      through familiar and new locations as you explore and discover magical
+      beasts, customize your character and craft potions, master spell casting,
+      upgrade talents and become the wizard you want to be.
+      <br />
+      <br />
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/990080/extras/HWL_Featured_Animation.png?t=1708720689" />
+      <br />
+      <br />
+      Experience Hogwarts in the 1800s. Your character is a student who holds
+      the key to an ancient secret that threatens to tear the wizarding world
+      apart. Make allies, battle Dark wizards, and ultimately decide the fate of
+      the wizarding world. Your legacy is what you make of it. Live the
+      Unwritten.
+      <br />
+      <br />
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/990080/extras/HWL_Features_600_Transparency.png?t=1708720689" />
+      <br />
+      <br />
+      <img src="https://cdn.akamai.steamstatic.com/steam/apps/990080/extras/HWL_Pub_Dev_Logo.png?t=1708720689" />
     </div>
   );
 }

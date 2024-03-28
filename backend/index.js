@@ -1,39 +1,34 @@
 const express = require("express");
+const cors = require("cors");
+require("dotenv").config();
+const helmet = require("helmet");
+const session = require("express-session");
 const passport = require("passport");
-const SteamStrategy = require("passport-steam").Strategy;
-
+const steamAuthPassport = require("./middleware/steamAuthPassport");
+const steam = require("./routes/steam.routes");
 const app = express();
-const port = 3000;
+// @ts-ignore
 
-passport.use(
-  new SteamStrategy(
-    {
-      returnURL: "http://localhost:3000/auth/steam/return",
-      realm: "http://localhost:3000",
-      apiKey: "540A0AF3E7EB2DEFE540ED7CBEAEA973",
-    },
-    (identifier, profile, done) => {
-      // console.log(identifier, profile, done);
-      done(profile);
-    }
-  )
+app.use(cors());
+app.options("*", cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+// @ts-ignore
+app.use(helmet());
+
+app.use(
+  session({
+    secret: "secret_key",
+    resave: true,
+    saveUninitialized: true,
+  })
 );
 
-app.get("/auth/steam", (req, res) => {
-  res.redirect("/");
+app.use(passport.session());
+app.use(steamAuthPassport);
+
+app.use(steam);
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
 });
-
-app.get(
-  "/auth/steam/return",
-  passport.authenticate("steam", {
-    failureRedirect: "/login",
-    successRedirect: "https://localhost:3005/",
-  }),
-  (req, res) => {
-    console.log("11111");
-    res.redirect("https://localhost:3005/");
-  }
-);
-
-app.get("/", (req, res) => res.send("Hello World!"));
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
