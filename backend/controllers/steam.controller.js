@@ -1,4 +1,8 @@
-const { __getUserData } = require("../models/user.moddels");
+const {
+  __getUserData,
+  __addSteamData,
+  __checkIfRegisteredWithSteam,
+} = require("../models/user.moddels");
 const steamApi = require("../utils/SteamAPI");
 const jwt = require("jsonwebtoken");
 
@@ -12,8 +16,24 @@ const createToken = (userID) => {
   );
 };
 
-const createNewUserWithSteam = async (req, res, next) => {
-  const { profile } = req.user;
+const logInWithSteam = async (req, res) => {
+  const steamProfile = req.user.profile._json;
+
+  try {
+    if (!__checkIfRegisteredWithSteam(steamProfile.steamid)) {
+      __addSteamData({ steam_id: steamProfile.steamid });
+    }
+    const userProfile = {
+      name: steamProfile.personaname,
+      steamID: steamProfile.steamid,
+      url: steamProfile.profileurl,
+      avatar: steamProfile.avatarfull,
+      region: steamProfile.loccountrycode,
+    };
+    res.status(200).json(userProfile);
+  } catch (error) {
+    res.status(500).send(error);
+  }
 };
 
 const getAllGames = async (req, res, next) => {
@@ -72,4 +92,5 @@ module.exports = {
   getSteamProfile,
   getGameData,
   getAllGames,
+  logInWithSteam,
 };

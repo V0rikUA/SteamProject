@@ -5,6 +5,7 @@ const __addNewUserByEmail = ({ email, password_hash, name }) => {
     .insert({
       email,
       password_hash,
+      name,
     })
     .returning(["id", "name"])
     .then((data) => data[0]);
@@ -16,8 +17,8 @@ const __addNewUserBySteam = ({ steam_id, name }) => {
     .returning(["id"]);
 };
 
-const __addSteamData = ({ steam_id, wishlist, game_list }) => {
-  return db("users").insert({ steam_id, wishlist, game_list });
+const __addSteamData = ({ steam_id }) => {
+  return db("users").insert({ steam_id });
 };
 
 const __getUserData = ({ id }) => {
@@ -34,13 +35,13 @@ const __getUserData = ({ id }) => {
     });
 };
 
-const __checkIfRegistered = (steamID) => {
+const __checkIfRegisteredWithSteam = (steamID) => {
   return db("users")
     .select("*")
     .where({ steam_id: steamID })
     .then((res) => {
-      if (res.length === 0) return res;
-      return {};
+      if (res.length === 0) return false;
+      return true;
     });
 };
 
@@ -51,4 +52,5 @@ module.exports = {
   __addNewUserBySteam,
   __addSteamData,
   __getUserData,
+  __checkIfRegisteredWithSteam,
 };
